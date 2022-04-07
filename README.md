@@ -20,4 +20,58 @@ Save the Clean data to the file
 
 
 # CODE
+```
+import pandas as pd
+df=pd.read_csv("Data_set.csv")
+print(df)
+df.head(10)
+
+df.info()
+
+df.isnull()
+
+df.isnull().sum()
+
+df['show_name']=df['show_name'].fillna(df['aired_on'].mode()[0])
+df['aired_on']=df['aired_on'].fillna(df['aired_on'].mode()[0])
+df['original_network']=df['original_network'].fillna(df['aired_on'].mode()[0])
+df.head()
+
+df['rating']=df['rating'].fillna(df['rating'].mean())
+df['current_overall_rank']=df['current_overall_rank'].fillna(df['current_overall_rank'].mean())
+df.head()
+
+df['watchers']=df['watchers'].fillna(df['watchers'].median())
+df.head()
+
+df.info()
+
+df.isnull().sum()
+```
+
 # OUPUT
+
+## DATA:
+![git](./1.png)
+![git](./2.jpeg)
+
+## NON NULL BEFORE
+![git](./3.jpeg)
+![git](./4.jpeg)
+![git](./5.jpeg)
+
+## MODE 
+![git](./6.jpeg)
+
+## MEAN:
+![git](./7.jpeg)
+
+## MEDIAN:
+![git](./8.jpeg)
+
+## NON NULL AFTER:
+![git](./9.jpeg)
+![git](./10.jpeg)
+
+# Result:-
+Thus, the given data is read, cleansed and the cleaned data is saved into the file.
